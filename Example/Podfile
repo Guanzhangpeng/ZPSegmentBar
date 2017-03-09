@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ZPSegmentBar_Example' do
+  pod 'ZPSegmentBar', :path => '../'
+
+  target 'ZPSegmentBar_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
