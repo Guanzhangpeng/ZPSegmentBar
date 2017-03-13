@@ -21,7 +21,7 @@ Pod::Spec.new do |s|
 TODO: 模仿今日头条 网易新闻等的NavigationBar效果
                        DESC
 
-  s.homepage         = 'https://github.com/Guanzhangpeng/ZPSegmentBar.git'
+  s.homepage         = 'https://github.com/Guanzhangpeng/ZPSegmentBar'
   # s.screenshots     = 'www.example.com/screenshots_1', 'www.example.com/screenshots_2'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }
   s.author           = { 'gzp' => 'zswangzp@163.com' }
