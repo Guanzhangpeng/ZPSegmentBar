@@ -18,7 +18,7 @@ view.addSubview(segmentView)
 ![scroll.gif](http://upload-images.jianshu.io/upload_images/1154433-56621400635e2bf0.gif?imageMogr2/auto-orient/strip)                           
 ![scroll2.gif](http://upload-images.jianshu.io/upload_images/1154433-5e2d81b327126e04.gif?imageMogr2/auto-orient/strip)
 
- `ZPStyle`这个结构体是用来封装该框架的一些样式,我们可以通过简单的配置来达到我们想要的效果,例如:
+ 集成该框架非常的方便,我们只需要调用`let segmentView = ZPSegmentBarView(frame: frame, titles: titles, style: style, childVcs: childVcs, parentVc: self)`即可创建该View,然后传入相关的参数即可,例如下面的小demo:
  
 ```
 import UIKit
