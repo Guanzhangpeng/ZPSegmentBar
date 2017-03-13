@@ -1,0 +1,6 @@
+framework module ZPSegmentBar {
+  umbrella header "ZPSegmentBar-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -28,8 +28,8 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		37191FF029028553BB7070D2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
-		3E4AC431398E09F8EF087D67 /* ZPSegmentBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ZPSegmentBar.podspec; path = ../ZPSegmentBar.podspec; sourceTree = "<group>"; };
+		37191FF029028553BB7070D2 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		3E4AC431398E09F8EF087D67 /* ZPSegmentBar.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZPSegmentBar.podspec; path = ../ZPSegmentBar.podspec; sourceTree = "<group>"; };
 		41A232C7676CD4147170912B /* Pods-ZPSegmentBar_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZPSegmentBar_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZPSegmentBar_Example/Pods-ZPSegmentBar_Example.release.xcconfig"; sourceTree = "<group>"; };
 		462659477A20D14E4B9DD318 /* Pods_ZPSegmentBar_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZPSegmentBar_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		5C3CCB883409DAC942E607DA /* Pods-ZPSegmentBar_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZPSegmentBar_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZPSegmentBar_Tests/Pods-ZPSegmentBar_Tests.release.xcconfig"; sourceTree = "<group>"; };
@@ -45,7 +45,7 @@
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		732CE9D10FEEC448010A7CFD /* Pods_ZPSegmentBar_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZPSegmentBar_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7B3E1BC2C1DDBF1F76B8B78F /* Pods-ZPSegmentBar_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZPSegmentBar_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZPSegmentBar_Example/Pods-ZPSegmentBar_Example.debug.xcconfig"; sourceTree = "<group>"; };
-		AF114377B0DA6D0B7E01308A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		AF114377B0DA6D0B7E01308A /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		D6112C7396BF964E7C4423D7 /* Pods-ZPSegmentBar_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZPSegmentBar_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZPSegmentBar_Tests/Pods-ZPSegmentBar_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
