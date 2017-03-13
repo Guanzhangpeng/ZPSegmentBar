@@ -9,7 +9,7 @@
 Pod::Spec.new do |s|
   s.name             = 'ZPSegmentBar'
   s.version          = '0.0.1'
-  s.summary          = 'ZPSegmentBar'
+  s.summary          = 'swift-模仿今日头条-网易新闻-导航栏效果'
 
 # This description is used to generate tags and improve search results.
 #   * Think: What does it do? Why did you write it? What is the focus?
