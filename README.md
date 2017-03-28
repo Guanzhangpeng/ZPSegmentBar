@@ -7,9 +7,11 @@
 
 该框架的主要功能包括两部分:
 
-1. 模仿今日头条或者是网易新闻 NavigationBar 效果,效果图如下:
+### 模仿今日头条或者是网易新闻 NavigationBar 效果,效果图如下:
+ 
 ![scroll.gif](http://upload-images.jianshu.io/upload_images/1154433-56621400635e2bf0.gif?imageMogr2/auto-orient/strip)                           
 ![scroll2.gif](http://upload-images.jianshu.io/upload_images/1154433-5e2d81b327126e04.gif?imageMogr2/auto-orient/strip)
+
 
  集成该框架非常的方便,我们只需要调用 
  
@@ -19,8 +21,10 @@
  
  即可创建该View,然后传入相关的参数即可 
  
-2. 封装了一个表情键盘或者是礼物键盘,效果图如下:
+### 封装了一个表情键盘或者是礼物键盘,效果图如下:
+ 
 ![2.gif](http://upload-images.jianshu.io/upload_images/1154433-09d3c6d7b0a93d86.gif?imageMogr2/auto-orient/strip)
+
 集成该框架非常的方便,我们只需要传入需要的参数即可,同时需要成为`ZPPageBarView`的数据源代理,实现相关的数据源方法即可,例如:
 
 ```
