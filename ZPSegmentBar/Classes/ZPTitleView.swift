@@ -192,65 +192,80 @@ extension ZPTitleView
     }
     
 }
+extension ZPTitleView {
+    func setCurrentIndex(_ index : Int) {
+        // 1.取出targetLabel
+        let targetLabel = titleLabels[index]
+        
+        // 2.调整Title
+        addjustTitles(targetLabel)
+    }
+}
 //MARK - 点击事件
 extension ZPTitleView
 {
     @objc fileprivate func titleClick(_ tapGes : UITapGestureRecognizer)
     {
+        // 0.校验Label是否有值
         guard let targetLabel = tapGes.view as? UILabel else {
             return
         }
         
-        // 判断点击的label是否是当前点击的label
-        guard currentIndex != targetLabel.tag else {
+        // 1.判断是否是之前点击的Label
+        guard targetLabel.tag != currentIndex else {
             return
         }
         
-        // 让当前Label处于选中状态
+        // 2.通知代理
+        // 可选链: 如果可选类型有值, 则执行代码, 没有值, 什么事情都不发生
+        delegate?.titleView(self, targetIndex: targetLabel.tag)
+        
+        // 3.调整Label
+        addjustTitles(targetLabel)
+    }
+    
+    fileprivate func addjustTitles(_ targetLabel : UILabel) {
+        // 2.让之前的Label不选中, 让新的Label可以选中
         let sourceLabel = titleLabels[currentIndex]
         sourceLabel.textColor = style.normalColor
         targetLabel.textColor = style.selecteColor
         
+        // 3.让新的tag作为currentIndex
         currentIndex = targetLabel.tag
         
-        if style.isScrollEnabled {
-            adjustLabelPosition()
-        }
+        // 4.调整点击的Label的位置,滚动到中间去
         
+        adjustLabelPosition()
         
-        // 通知代理
-        delegate?.titleView(self, targetIndex: currentIndex)
-        
-  
-        
-        // 调整文字缩放效果
+        // 6.调整文字缩放
         if style.isNeedScale {
-            UIView.animate(withDuration: 0.25, animations: { 
+            UIView.animate(withDuration: 0.25, animations: {
                 sourceLabel.transform = CGAffineTransform.identity
                 targetLabel.transform = CGAffineTransform(scaleX: self.style.maxScale, y: self.style.maxScale)
             })
         }
         
-        //调整BottomLine的位置;
+        // 7.调整bottomLine位置
         if style.isShowBottomLine {
-            UIView.animate(withDuration: 0.25, animations: { 
+            UIView.animate(withDuration: 0.25, animations: {
                 self.bottomLine.frame.origin.x = targetLabel.frame.origin.x
-                self.bottomLine.frame.size.width=targetLabel.frame.size.width
+                self.bottomLine.frame.size.width = targetLabel.frame.width
             })
         }
         
-        //调整遮盖的位置
+        
+        // 8.调整CoverView位置
         if style.isShowCover {
-            
             UIView.animate(withDuration: 0.25, animations: {
-                self.coverView.frame.origin.x = self.style.isScrollEnabled ? (targetLabel.frame.origin.x - self.style.coverViewMargin):(targetLabel.frame.origin.x)
-                self.coverView.frame.size.width = self.style.isScrollEnabled ?  (targetLabel.frame.size.width + self.style.coverViewMargin*2) : targetLabel.frame.size.width
+                self.coverView.frame.origin.x = self.style.isScrollEnabled ? (targetLabel.frame.origin.x - self.style.coverViewMargin) : targetLabel.frame.origin.x
+                self.coverView.frame.size.width = self.style.isScrollEnabled ? (targetLabel.frame.width + self.style.coverViewMargin * 2) : targetLabel.frame.width
             })
         }
     }
-    
     fileprivate func adjustLabelPosition()
     {
+        guard style.isScrollEnabled else { return }
+        
         //调整点击Label的位置,滚动到中间位置;
         let targetLabel = titleLabels[currentIndex]
         

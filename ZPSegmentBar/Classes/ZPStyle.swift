@@ -38,5 +38,8 @@ public struct ZPStyle {
     public var coverViewAlpha : CGFloat  = 0.7 //遮盖透明度
     public  var coverViewMargin : CGFloat = 8 //遮盖间距
     
+    public var isTitleIntop : Bool = true //标题是否在顶部
+    public var pageControlHeight : CGFloat = 20 // pageControl 的高度
+    
     
 }

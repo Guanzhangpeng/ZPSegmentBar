@@ -1,5 +1,5 @@
 PODS:
-  - ZPSegmentBar (0.1.0)
+  - ZPSegmentBar (0.0.1)
 
 DEPENDENCIES:
   - ZPSegmentBar (from `../`)
@@ -9,8 +9,8 @@ EXTERNAL SOURCES:
     :path: "../"
 
 SPEC CHECKSUMS:
-  ZPSegmentBar: 6afc0c056b55002f56c9b2c51446581e68c04f77
+  ZPSegmentBar: eda39f31e7ddbcaf789cb79f2e8e5e24950f170b
 
-PODFILE CHECKSUM: a5871418ada75ec1af0a0b703a9be3d4bf55bd0f
+PODFILE CHECKSUM: 66f0d185e6fa168a1b6e15d8aec4199302f87847
 
 COCOAPODS: 1.2.0
