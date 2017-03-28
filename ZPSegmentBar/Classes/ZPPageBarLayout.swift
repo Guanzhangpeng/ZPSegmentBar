@@ -8,27 +8,15 @@
 
 import UIKit
 
-public class ZPPageBarLayout: UICollectionViewLayout {
+public class ZPPageBarLayout: UICollectionViewFlowLayout {
 
-    public var minimumInteritemSpacing : CGFloat = 0
-    public var minimumLineSpacing : CGFloat = 0
    public var rows : Int = 2
    public var columns : Int = 4
-   public var sectionInset : UIEdgeInsets = UIEdgeInsets.zero
     
     
    fileprivate lazy var attributes : [UICollectionViewLayoutAttributes] = [UICollectionViewLayoutAttributes]()
     
    fileprivate var totalWidth : CGFloat = 0
-    
-   public override init() {
-     super.init()
-    
-    }
-    
-    required public init?(coder aDecoder: NSCoder) {
-        fatalError("init(coder:) has not been implemented")
-    }
     
 }
 
@@ -88,10 +76,8 @@ extension ZPPageBarLayout
             
         }
         
+        // 计算滚动的总宽度
         totalWidth = CGFloat(previousNumofPage) * collectionView.bounds.width
-        
-        
-        
     }
     
 }
