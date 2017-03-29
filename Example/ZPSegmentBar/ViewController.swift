@@ -17,52 +17,53 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         
         automaticallyAdjustsScrollViewInsets=false
-//
-//        let frame=CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-////        
-//        let titles = ["推荐321","热点3","直播6666","视频","阳光视频","社会热点","娱乐","科技","汽车"]
-//
-//        var style = ZPStyle()
+
+        let frame=CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
+//        
+        let titles = ["推荐321","热点3","直播6666","视频","阳光视频","社会热点","娱乐","科技","汽车"]
+
+        var style = ZPStyle()
+        style.isShowBottomLine=false
 //        style.isShowCover = true    //显示遮盖
 //        style.isShowBottomLine=true //显示BottomLine
 //        style.isNeedScale=true      //文字缩放
+        
+        var childVcs = [UIViewController]()
+        for _ in titles {
+            let vc = UIViewController()
+            vc.view.backgroundColor=UIColor(red: CGFloat(arc4random_uniform(256))/255.0, green: CGFloat(arc4random_uniform(256))/255.0, blue: CGFloat(arc4random_uniform(256))/255.0, alpha: 1.0)
+            childVcs.append(vc)
+        }
+        
+        //创建ZPSegmentBarView
+        let segmentView = ZPSegmentBarView(frame: frame, titles: titles, style: style, childVcs: childVcs, parentVc: self)
+        
+        view.addSubview(segmentView)
+        
+        
+//        let titles = ["热门", "高级", "专属", "豪华"]
+//        var  style  = ZPStyle()
 //        
-//        var childVcs = [UIViewController]()
-//        for _ in titles {
-//            let vc = UIViewController()
-//            vc.view.backgroundColor=UIColor(red: CGFloat(arc4random_uniform(256))/255.0, green: CGFloat(arc4random_uniform(256))/255.0, blue: CGFloat(arc4random_uniform(256))/255.0, alpha: 1.0)
-//            childVcs.append(vc)
-//        }
+//        style.isScrollEnabled = false
 //        
-//        //创建ZPSegmentBarView
-//        let segmentView = ZPSegmentBarView(frame: frame, titles: titles, style: style, childVcs: childVcs, parentVc: self)
+//        let layout = ZPPageBarLayout()
 //        
-//        view.addSubview(segmentView)
-        
-        
-        let titles = ["热门", "高级", "专属", "豪华"]
-        var  style  = ZPStyle()
-        
-        style.isScrollEnabled = false
-        
-        let layout = ZPPageBarLayout()
-        
-        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
-        layout.minimumLineSpacing=10
-        layout.minimumInteritemSpacing=10
-        layout.columns=8
-        layout.rows = 3
-        
-        
-        let frame = CGRect(x: 0, y: 100, width:view.bounds.width, height: 300)
-        
-        let pageBarView = ZPPageBarView(frame: frame, titles: titles, style: style, layout: layout)
-        //设置数据源
-        pageBarView.dataSource=self
-        
-        pageBarView.registerCell(UICollectionViewCell.self, reusableIdentifier: kCollectionViewCellID)
-        
-        view.addSubview(pageBarView)
+//        layout.sectionInset = UIEdgeInsets(top: 10, left: 10, bottom: 10, right: 10)
+//        layout.minimumLineSpacing=10
+//        layout.minimumInteritemSpacing=10
+//        layout.columns=8
+//        layout.rows = 3
+//        
+//        
+//        let frame = CGRect(x: 0, y: 100, width:view.bounds.width, height: 300)
+//        
+//        let pageBarView = ZPPageBarView(frame: frame, titles: titles, style: style, layout: layout)
+//        //设置数据源
+//        pageBarView.dataSource=self
+//        
+//        pageBarView.registerCell(UICollectionViewCell.self, reusableIdentifier: kCollectionViewCellID)
+//        
+//        view.addSubview(pageBarView)
         
     }
 }
