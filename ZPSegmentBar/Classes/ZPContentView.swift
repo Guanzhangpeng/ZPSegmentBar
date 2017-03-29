@@ -105,9 +105,12 @@ extension ZPContentView : UICollectionViewDataSource
 //MARK -UICollectionView代理方法 --UICollectionViewDelegate
 extension ZPContentView : UICollectionViewDelegate
 {
-    func scrollViewWillEndDragging(_ scrollView: UIScrollView, withVelocity velocity: CGPoint, targetContentOffset: UnsafeMutablePointer<CGPoint>) {
-        scrollView.isScrollEnabled=false
+
+    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
+        isForbidDelegate=false
+        startOffsetX=scrollView.contentOffset.x
     }
+    
     
     func scrollViewDidEndDecelerating(_ scrollView: UIScrollView) {
         scrollViewDIdEndScroll()
@@ -124,24 +127,18 @@ extension ZPContentView : UICollectionViewDelegate
       // MARK :  停止滚动
     private func scrollViewDIdEndScroll()
     {
-        collectionView.isScrollEnabled=true
         
         let targetIndex = Int(collectionView.contentOffset.x / collectionView.bounds.width)
         
         delegate?.contentView(self, didEndScroll: targetIndex)
-        
     }
     
-    func scrollViewWillBeginDragging(_ scrollView: UIScrollView) {
-        isForbidDelegate=false
-        startOffsetX=scrollView.contentOffset.x
-    }
-    
+
     func scrollViewDidScroll(_ scrollView: UIScrollView) {
         
         let contentOffsetX = scrollView.contentOffset.x
-        //判断有没有进行滚动,是否允许执行代理方法
-        guard startOffsetX != contentOffsetX && !isForbidDelegate else {
+        
+        guard contentOffsetX != startOffsetX && !isForbidDelegate else {
             return
         }
         
@@ -150,30 +147,32 @@ extension ZPContentView : UICollectionViewDelegate
         var targetIndex = 0
         var progress : CGFloat = 0
         let collectionWidth = collectionView.bounds.width
+        
         //左侧滑动
         if contentOffsetX > startOffsetX  {
-            sourceIndex = Int(contentOffsetX / collectionView.bounds.width)
+            sourceIndex = Int(contentOffsetX / collectionWidth)
             targetIndex = sourceIndex + 1
             
-            if targetIndex >  childVcs.count-1 {
-                targetIndex = childVcs.count-1
-            }
-            
-            progress = (contentOffsetX - startOffsetX)/collectionWidth
+             progress = CGFloat(scrollView.contentOffset.x).truncatingRemainder(dividingBy: CGFloat(collectionWidth)) / CGFloat(collectionWidth)
             
             if((contentOffsetX - startOffsetX)==collectionWidth)
             {
+                progress = 1
                 targetIndex=sourceIndex
             }
         }
         else{
             //右侧滑动
             targetIndex = Int(contentOffsetX / collectionWidth)
+            
             sourceIndex = targetIndex + 1
-            progress = (startOffsetX - contentOffsetX) / collectionWidth
+            
+            progress = 1 - (CGFloat(scrollView.contentOffset.x).truncatingRemainder(dividingBy: CGFloat(collectionWidth)) / CGFloat(collectionWidth))
             
         }
-        
+        if targetIndex > childVcs.count - 1 || targetIndex < 0 || sourceIndex > childVcs.count - 1 {
+            return
+        }
         delegate?.contentView(self, sourceIndex: sourceIndex, targetIndex: targetIndex, progress: progress)
         
     }

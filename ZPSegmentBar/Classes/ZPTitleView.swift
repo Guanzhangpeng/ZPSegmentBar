@@ -28,8 +28,10 @@ class ZPTitleView: UIView {
         let deltaR = self.selectedRGB.0 - self.normalRGB.0
         let deltaG = self.selectedRGB.1 - self.normalRGB.1
         let deltaB = self.selectedRGB.2 - self.normalRGB.2
-         print(deltaR,deltaG,deltaB)
+        
+//        print("R:\(deltaR) G:\(deltaG) B:\(deltaB)")
         return (deltaR,deltaG,deltaB)
+        
     }()
     fileprivate lazy var scrollView : UIScrollView = {
     
@@ -299,14 +301,13 @@ extension ZPTitleView: ZPContentViewDelegate
     }
     
     func contentView(_ contentView: ZPContentView, sourceIndex: Int, targetIndex: Int, progress: CGFloat) {
-
         
         //1.0 根据sourceIndex和TargetIndex获取对应的Label
         let sourceLabel = titleLabels[sourceIndex]
         let targetLabel = titleLabels[targetIndex]
-        
+
         //2.0 设置颜色渐变效果;
-        sourceLabel.textColor=UIColor(red: selectedRGB.0 - deltaRGB.0 * progress, green: selectedRGB.1 - deltaRGB.1 * progress, blue: selectedRGB.2 - deltaRGB.2 * progress, alpha: 1.0)
+        sourceLabel.textColor=UIColor(red: selectedRGB.0 - deltaRGB.0 * progress, green: selectedRGB.1 - deltaRGB.1 * progress, blue: selectedRGB.2 - deltaRGB.2 * progress,alpha: 1.0)
         
         targetLabel.textColor = UIColor(red: normalRGB.0 + deltaRGB.0 * progress, green: normalRGB.1 + deltaRGB.1 * progress, blue: normalRGB.2 + deltaRGB.2 * progress, alpha: 1.0)
         
@@ -333,7 +334,9 @@ extension ZPTitleView: ZPContentViewDelegate
             coverView.frame.size.width = style.isScrollEnabled ? (sourceLabel.frame.width + deltaWidth * progress + style.coverViewMargin * 2) : (sourceLabel.frame.width + deltaWidth * progress)
         }
         
-        
+        // 记录最新的index
+        currentIndex = targetIndex
+       
     }
 }
 

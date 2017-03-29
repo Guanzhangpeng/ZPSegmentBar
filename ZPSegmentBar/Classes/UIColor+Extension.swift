@@ -12,15 +12,16 @@ extension UIColor
 {
    public func getRGBValue() -> (CGFloat ,CGFloat,CGFloat) {
         
-        var  red : CGFloat = 0
-        var  blue : CGFloat = 0
-        var green :CGFloat = 0
-        
+
+    
+        var red : CGFloat = 0
+        var green : CGFloat = 0
+        var blue : CGFloat = 0
         getRed(&red, green: &green, blue: &blue, alpha: nil)
-  
         
-        return (red,green,blue)
-        
+//        return (red * 255, green * 255, blue * 255)
+    return (red , green , blue )
+    
     }
     
    public class func randomColor() -> UIColor
