@@ -121,10 +121,9 @@ extension ZPContentView : UICollectionViewDelegate
         {
             scrollViewDIdEndScroll()
         }
-       
     }
     
-      // MARK :  停止滚动
+    // MARK :  停止滚动
     private func scrollViewDIdEndScroll()
     {
         

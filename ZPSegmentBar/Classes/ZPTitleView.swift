@@ -129,20 +129,41 @@ extension ZPTitleView
         var titleLabelW :CGFloat = bounds.width / CGFloat(titleLabels.count)
         let titleLabelY :CGFloat = 0
         let titleLabelH :CGFloat = style.titleHeight
+        var totalWidth : CGFloat = 0
+        var calculteMargin : CGFloat = 0
+        
+        
+        //如果标题不能滚动计算标题之间的最小间距;
+        if !style.isScrollEnabled {
+       
+            for titleLabel in titleLabels {
+                
+              titleLabelW = (titleLabel.text! as NSString).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 0), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName : style.titleFont], context: nil).width
+                
+                totalWidth = totalWidth + titleLabelW
+            }
+            
+            calculteMargin = ( bounds.width - totalWidth ) / CGFloat(titleLabels.count+1)
+            
+            if calculteMargin < style.titleMargin
+            {
+                calculteMargin = style.titleMargin
+            }
+         }
+        
         
         for (index ,titleLabe ) in titleLabels.enumerated()
         {
+            //计算文字的宽度
+             titleLabelW = (titleLabe.text! as NSString).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 0), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName : style.titleFont], context: nil).width
+            
             if style.isScrollEnabled {//可以滚动
-                //计算文字的宽度
-                
-                titleLabelW = (titleLabe.text! as NSString).boundingRect(with: CGSize(width: CGFloat(MAXFLOAT), height: 0), options: .usesLineFragmentOrigin, attributes: [NSFontAttributeName : style.titleFont], context: nil).width
-                
                 titlelabelX = index == 0 ? style.titleMargin*0.5 : titleLabels[index-1].frame.maxX + style.titleMargin
-                
             }
             else{
                 //不可以滚动
-                titlelabelX = titleLabelW * CGFloat(index)
+                titlelabelX = index == 0 ? calculteMargin : titleLabels[index-1].frame.maxX + calculteMargin
+                
             }
              //设置titleLabel的frame
             titleLabe.frame = CGRect(x: titlelabelX, y: titleLabelY, width: titleLabelW, height: titleLabelH)
@@ -179,18 +200,11 @@ extension ZPTitleView
     {
         scrollView.insertSubview(coverView, at: 0)
         
-        var coverViewX = titleLabels.first!.frame.origin.x
+        let coverViewX = titleLabels.first!.frame.origin.x - style.coverViewMargin
         let coverViewY = (style.titleHeight-style.coverViewHeight)*0.5
         let coverViewH = style.coverViewHeight
-        var coverViewW = titleLabels.first!.frame.size.width
-        
-        if style.isScrollEnabled {
-            coverViewX -= style.coverViewMargin
-            coverViewW += style.coverViewMargin * 2
-        }
+        let coverViewW = titleLabels.first!.frame.size.width + style.coverViewMargin * 2
         coverView.frame = CGRect(x: coverViewX, y: coverViewY, width: coverViewW, height: coverViewH)
-        
-        
     }
     
 }
@@ -259,8 +273,11 @@ extension ZPTitleView
         // 8.调整CoverView位置
         if style.isShowCover {
             UIView.animate(withDuration: 0.25, animations: {
-                self.coverView.frame.origin.x = self.style.isScrollEnabled ? (targetLabel.frame.origin.x - self.style.coverViewMargin) : targetLabel.frame.origin.x
-                self.coverView.frame.size.width = self.style.isScrollEnabled ? (targetLabel.frame.width + self.style.coverViewMargin * 2) : targetLabel.frame.width
+//                self.coverView.frame.origin.x = self.style.isScrollEnabled ? (targetLabel.frame.origin.x - self.style.coverViewMargin) : targetLabel.frame.origin.x
+//                self.coverView.frame.size.width = self.style.isScrollEnabled ? (targetLabel.frame.width + self.style.coverViewMargin * 2) : targetLabel.frame.width
+                
+                self.coverView.frame.origin.x = targetLabel.frame.origin.x - self.style.coverViewMargin
+                self.coverView.frame.size.width = targetLabel.frame.width + self.style.coverViewMargin * 2
             })
         }
     }
@@ -280,7 +297,7 @@ extension ZPTitleView
         //设置最大滚动范围;
         let maxOffsetX = scrollView.contentSize.width - bounds.width;
         
-        if offsetX > maxOffsetX
+        if offsetX > maxOffsetX && maxOffsetX > 0
         {
             offsetX = maxOffsetX
         }
@@ -330,8 +347,12 @@ extension ZPTitleView: ZPContentViewDelegate
         
         //设置遮盖的滚动变化
         if style.isShowCover {
-            coverView.frame.origin.x = style.isScrollEnabled ? (sourceLabel.frame.origin.x+deltaX * progress - style.coverViewMargin ) : (sourceLabel.frame.origin.x+deltaX * progress)
-            coverView.frame.size.width = style.isScrollEnabled ? (sourceLabel.frame.width + deltaWidth * progress + style.coverViewMargin * 2) : (sourceLabel.frame.width + deltaWidth * progress)
+//            coverView.frame.origin.x = style.isScrollEnabled ? (sourceLabel.frame.origin.x+deltaX * progress - style.coverViewMargin ) : (sourceLabel.frame.origin.x+deltaX * progress)
+//            coverView.frame.size.width = style.isScrollEnabled ? (sourceLabel.frame.width + deltaWidth * progress + style.coverViewMargin * 2) : (sourceLabel.frame.width + deltaWidth * progress)
+            
+        coverView.frame.origin.x = sourceLabel.frame.origin.x+deltaX * progress - style.coverViewMargin
+        coverView.frame.size.width = sourceLabel.frame.width + deltaWidth * progress + style.coverViewMargin * 2
+            
         }
         
         // 记录最新的index

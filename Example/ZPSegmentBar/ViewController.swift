@@ -19,10 +19,11 @@ class ViewController: UIViewController {
         automaticallyAdjustsScrollViewInsets=false
 
         let frame=CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-//        
-        let titles = ["推荐321","热点3","直播6666","视频","阳光视频","社会热点","娱乐","科技","汽车"]
-
+    
+        let titles = ["推荐","热点","直播","视频","阳光视频","社会热点","娱乐","科技","汽车"]
+//      let titles = ["推荐","热点","直播","汽车"]
         var style = ZPStyle()
+        style.isScrollEnabled=true;
         style.isShowCover = true    //显示遮盖
         style.isShowBottomLine=true //显示BottomLine
         style.isNeedScale=true      //文字缩放
