@@ -1,5 +1,4 @@
-# ZPSegmentBar
-
+# ZPSegmentBar 该框架分为OC和Swfit两个版本:点击前往[OC版本](https://github.com/Guanzhangpeng/ZPSegmentBarOC)
 [![CI Status](http://img.shields.io/travis/gzp/ZPSegmentBar.svg?style=flat)](https://travis-ci.org/gzp/ZPSegmentBar)
 [![Version](https://img.shields.io/cocoapods/v/ZPSegmentBar.svg?style=flat)](http://cocoapods.org/pods/ZPSegmentBar)
 [![License](https://img.shields.io/cocoapods/l/ZPSegmentBar.svg?style=flat)](http://cocoapods.org/pods/ZPSegmentBar)
