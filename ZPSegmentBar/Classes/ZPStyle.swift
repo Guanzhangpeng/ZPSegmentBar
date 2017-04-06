@@ -14,6 +14,9 @@ public struct ZPStyle {
         
     }
 
+    public var titleViewBackgroundColor = UIColor.purple             //titleView 的背景颜色
+    public var ContentViewBackgroundColor = UIColor.gray             //contentView 的背景颜色
+    
     public var titleHeight : CGFloat = 44                            //ZPTitleView 的高度
     public var titleFont   : UIFont  = UIFont.systemFont(ofSize: 14) //title的字体
     public var normalColor : UIColor = .white                       //文本普通颜色

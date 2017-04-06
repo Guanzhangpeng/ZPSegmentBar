@@ -69,7 +69,7 @@ extension ZPPageBarView
         let titleView = ZPTitleView(frame: titleViewFrame, titles: titles, style: style)
         titleView.delegate = self
         addSubview(titleView)
-        titleView.backgroundColor =  UIColor.gray
+         titleView.backgroundColor = style.titleViewBackgroundColor
         
         self.titleView=titleView
         
@@ -86,7 +86,7 @@ extension ZPPageBarView
         collectionView.dataSource=self
         collectionView.delegate = self
         addSubview(collectionView)
-        collectionView.backgroundColor = UIColor.purple
+        collectionView.backgroundColor = style.ContentViewBackgroundColor
         self.collectionView = collectionView
         
         //3.0 创建UIPageControl
