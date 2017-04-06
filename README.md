@@ -69,7 +69,7 @@ pageBarView.registerCell(UICollectionViewCell.self, reusableIdentifier: kCollect
 view.addSubview(pageBarView)
 
 ```
-实现数据源方法
+##### 5.实现数据源方法
 
 ```
 extension ViewController : ZPPageBarViewDataSource
