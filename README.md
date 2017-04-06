@@ -112,7 +112,7 @@ pod 'ZPSegmentBar', '~> 0.1.3'
 ## Author
 [简书连接](http://www.jianshu.com/u/68bedf0c5c86)
 
-gzp, 15600928831@163.com
+gzp, zswangzp@163.com
 
 ## License
 
