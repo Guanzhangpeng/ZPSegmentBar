@@ -96,7 +96,16 @@ extension ZPContentView : UICollectionViewDataSource
     func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
         let cell = collectionView.dequeueReusableCell(withReuseIdentifier: kContentCellID, for: indexPath)
         
-        cell.backgroundColor = UIColor(red: CGFloat(arc4random_uniform(256))/255.0, green: CGFloat(arc4random_uniform(256))/255.0, blue: CGFloat(arc4random_uniform(256))/255.0, alpha: 1.0)
+        //移除旧的View
+        for subView in cell.contentView.subviews {
+            
+            subView.removeFromSuperview()
+        }
+        
+        //添加View
+        let childVC = childVcs[indexPath.item]
+        childVC.view.frame=CGRect(x: 0, y: 0, width: bounds.width, height: bounds.height)
+        cell.contentView.addSubview(childVC.view)
         
         return cell
         
