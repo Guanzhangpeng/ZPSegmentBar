@@ -106,7 +106,7 @@ ZPSegmentBar is available through [CocoaPods](http://cocoapods.org). To install
 it, simply add the following line to your Podfile:
 
 ```ruby
-pod 'ZPSegmentBar', '~> 0.1.3'
+pod 'ZPSegmentBar', '~> 0.1.5'
 ```
 
 ## Author
