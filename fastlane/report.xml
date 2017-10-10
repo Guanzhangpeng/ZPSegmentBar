@@ -5,57 +5,34 @@
     
     
       
-      <testcase classname="fastlane.lanes" name="00: Verifying required fastlane version" time="0.001267">
+      <testcase classname="fastlane.lanes" name="0: Verifying required fastlane version" time="0.001289">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="01: default_platform" time="0.001038">
+      <testcase classname="fastlane.lanes" name="1: default_platform" time="0.000982">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="02: cocoapods" time="2.470879">
+      <testcase classname="fastlane.lanes" name="2: cocoapods" time="3.089398">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="03: git_add" time="0.044144">
+      <testcase classname="fastlane.lanes" name="3: git_add" time="0.054791">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="04: git_commit" time="0.055394">
+      <testcase classname="fastlane.lanes" name="4: git_commit" time="0.074215">
         
       </testcase>
     
       
-      <testcase classname="fastlane.lanes" name="05: push_to_git_remote" time="6.16761">
+      <testcase classname="fastlane.lanes" name="5: push_to_git_remote" time="1.449684">
         
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="06: git_tag_exists" time="0.017477">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="07: add_git_tag" time="0.020486">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="08: push_git_tags" time="5.461752">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="09: pod_lib_lint" time="22.094418">
-        
-      </testcase>
-    
-      
-      <testcase classname="fastlane.lanes" name="10: pod_push" time="171.973477">
+          <failure message="/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/actions/actions_helper.rb:48:in `execute_action'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/runner.rb:230:in `block in execute_action'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/runner.rb:226:in `chdir'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/runner.rb:226:in `execute_action'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/runner.rb:148:in `trigger_action_by_name'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/fast_file.rb:146:in `method_missing'&#10;Fastfile:31:in `block (2 levels) in parsing_binding'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/lane.rb:33:in `call'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/runner.rb:49:in `block in execute'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/runner.rb:45:in `chdir'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/runner.rb:45:in `execute'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/lane_manager.rb:52:in `cruise_lane'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/command_line_handler.rb:30:in `handle'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/commands_generator.rb:104:in `block (2 levels) in run'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/commander-fastlane-4.4.5/lib/commander/command.rb:178:in `call'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/commander-fastlane-4.4.5/lib/commander/command.rb:153:in `run'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/commander-fastlane-4.4.5/lib/commander/runner.rb:476:in `run_active_command'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane_core/lib/fastlane_core/ui/fastlane_runner.rb:64:in `run!'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/commander-fastlane-4.4.5/lib/commander/delegates.rb:15:in `run!'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/commands_generator.rb:303:in `run'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/commands_generator.rb:42:in `start'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/fastlane/lib/fastlane/cli_tools_distributor.rb:66:in `take_off'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0@global/gems/fastlane-2.51.0/bin/fastlane:20:in `&lt;top (required)&gt;'&#10;/Users/gzp/.rvm/rubies/ruby-2.4.0/bin/fastlane:22:in `load'&#10;/Users/gzp/.rvm/rubies/ruby-2.4.0/bin/fastlane:22:in `&lt;main&gt;'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:15:in `eval'&#10;/Users/gzp/.rvm/gems/ruby-2.4.0/bin/ruby_executable_hooks:15:in `&lt;main&gt;'&#10;&#10;Exit status of command 'git push origin master:master --tags' was 1 instead of 0.&#10;To https://github.com/Guanzhangpeng/ZPSegmentBar.git&#10; ! [rejected]        master -&gt; master (fetch first)&#10;error: failed to push some refs to 'https://github.com/Guanzhangpeng/ZPSegmentBar.git'&#10;hint: Updates were rejected because the remote contains work that you do&#10;hint: not have locally. This is usually caused by another repository pushing&#10;hint: to the same ref. You may want to first integrate the remote changes&#10;hint: (e.g., 'git pull ...') before pushing again.&#10;hint: See the 'Note about fast-forwards' in 'git push --help' for details.&#10;" />
         
       </testcase>
     
