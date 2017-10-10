@@ -43,8 +43,7 @@ extension ZPSegmentBarView
         
         let titleView = ZPTitleView(frame: titleFrame, titles: titles, style: style)
         addSubview(titleView)
-        titleView.backgroundColor = UIColor.gray
-        
+        titleView.backgroundColor = style.titleViewBackgroundColor       
        
         
         //2.0 创建ContentView

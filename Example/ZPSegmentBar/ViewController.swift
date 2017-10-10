@@ -24,6 +24,8 @@ class ViewController: UIViewController {
 //        let titles = ["推荐","热点","直播","汽车"]
         
         var style = ZPStyle()
+        style.titleViewBackgroundColor = .white //titleView背景颜色,默认是紫色
+        style.normalColor = .darkGray
         style.isScrollEnabled=true; //标题是否可以滚动,默认为true;
         style.isShowCover = true    //标题是否显示遮盖,默认为true;
         style.isShowBottomLine=true //标题下方是否显示BottomLine,默认为true;

@@ -14,13 +14,13 @@ public struct ZPStyle {
         
     }
 
-    public var titleViewBackgroundColor = UIColor.purple             //titleView 的背景颜色
-    public var ContentViewBackgroundColor = UIColor.gray             //contentView 的背景颜色
+    public var titleViewBackgroundColor = UIColor.purple             //titleView 的背景颜色,     默认是紫色
+    public var ContentViewBackgroundColor = UIColor.gray             //contentView 的背景颜色,   默认是灰色
     
-    public var titleHeight : CGFloat = 44                            //ZPTitleView 的高度
-    public var titleFont   : UIFont  = UIFont.systemFont(ofSize: 14) //title的字体
-    public var normalColor : UIColor = .white                       //文本普通颜色
-    public var selecteColor: UIColor = .orange                     //文本选中颜色
+    public var titleHeight : CGFloat = 44                            //ZPTitleView 的高度,      默认是44
+    public var titleFont   : UIFont  = UIFont.systemFont(ofSize: 14) //title的字体,默认14
+    public var normalColor : UIColor = .white                       //文本普通颜色,              默认白色
+    public var selecteColor: UIColor = .orange                     //文本选中颜色,               默认橘色
     
     public var isScrollEnabled : Bool = true //标题能否滚动
     public  var  titleMargin : CGFloat  = 20  //能滚动情况下,文字的间距

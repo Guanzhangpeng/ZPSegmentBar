@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZPSegmentBar'
-  s.version          = '0.1.5'
+  s.version          = '0.1.6'
   s.summary          = '今日头条-网易新闻-导航栏效果 表情键盘'
 
 # This description is used to generate tags and improve search results.
