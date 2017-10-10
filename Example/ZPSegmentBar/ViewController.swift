@@ -16,12 +16,12 @@ class ViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        automaticallyAdjustsScrollViewInsets=false
-
+//        automaticallyAdjustsScrollViewInsets=false
+        
+// ===================================模仿今日头条标题滚动效果==================================
         let frame=CGRect(x: 0, y: 0, width: view.bounds.width, height: view.bounds.height)
-    
         let titles = ["推荐","热点","直播","视频","阳光视频","社会热点","娱乐","科技","汽车"]
-        //let titles = ["推荐","热点","直播","汽车"]
+//        let titles = ["推荐","热点","直播","汽车"]
         
         var style = ZPStyle()
         style.isScrollEnabled=true; //标题是否可以滚动,默认为true;
@@ -38,9 +38,9 @@ class ViewController: UIViewController {
         
         //创建ZPSegmentBarView
         let segmentView = ZPSegmentBarView(frame: frame, titles: titles, style: style, childVcs: childVcs, parentVc: self)
-                
         view.addSubview(segmentView)
         
+// ===================================表情键盘效果==================================
         
 //        let titles = ["热门", "高级", "专属", "豪华"]
 //        
