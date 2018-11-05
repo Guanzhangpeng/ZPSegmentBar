@@ -1,7 +1,7 @@
 # ZPSegmentBar 该框架分为OC和Swfit两个版本:点击前往[OC版本](https://github.com/Guanzhangpeng/ZPSegmentBarOC)
 
 
-##该框架的主要功能包括两部分:
+## 该框架的主要功能包括两部分:
 
 ### 1. 模仿今日头条或者是网易新闻 NavigationBar 效果,效果图如下:
  
@@ -9,7 +9,7 @@
 ![scroll2.gif](http://upload-images.jianshu.io/upload_images/1154433-5e2d81b327126e04.gif?imageMogr2/auto-orient/strip)
 
 
-####集成该框架的主要步骤:
+#### 集成该框架的主要步骤:
 
 ##### 1. 导入头文件 `import ZPSegmentBar`
 ##### 2. 实例化`ZPStyle`,并且传入我们需要的样式,例如:
@@ -37,7 +37,7 @@ view.addSubview(segmentView)
  
 ![2.gif](http://upload-images.jianshu.io/upload_images/1154433-09d3c6d7b0a93d86.gif?imageMogr2/auto-orient/strip)
 
-####集成该功能的主要步骤:
+#### 集成该功能的主要步骤:
 ##### 1. 和上面的步骤一样,导入头文件 `import ZPSegmentBar`
 ##### 2. 和上面的步骤一样,实例化`ZPStyle`,并且传入我们需要的样式,例如:
 ```
